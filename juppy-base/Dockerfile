@@ -10,21 +10,22 @@ RUN apt-get update && \
     apt-get autoremove -y && apt-get clean && \
     conda clean -i -l -t -y && \
     rm -rf /usr/local/src/*
-# install nodejs/npm
-RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
-    apt-get install -y build-essential nodejs npm
-# AWS
-RUN pip install boto3
-# install pymars (it's cool)
-RUN pip install pymars
+
+RUN mkdir /juppy
+
+COPY requirements.txt /juppy/
 # install important stuff
-RUN pip install requests Flask Pillow SQLAlchemy beautifulsoup4 psycopg2-binary
+RUN pip install -r /juppy/requirements.txt
 
 # Prepare all
-COPY prepare /
-RUN chmod +x prepare.sh
-CMD ["./prepare.sh"]
+COPY prepare /juppy/
+RUN chmod +x /juppy/prepare.sh
+RUN "/juppy/prepare.sh"
 
 RUN mkdir /opt/notebooks
 
+COPY start.sh /juppy/
+RUN chmod +x /juppy/start.sh
+
+ENTRYPOINT [ "/juppy/start.sh" ]
 EXPOSE 8888

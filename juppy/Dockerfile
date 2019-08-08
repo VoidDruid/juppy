@@ -1,4 +1,4 @@
-from juppy-base
+FROM juppy-base
 
 # Install more kernels
 
@@ -7,6 +7,10 @@ RUN pip install bash_kernel && \
     python -m bash_kernel.install
 
 # Javascript
+# install nodejs/npm
+RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
+    apt-get install -y build-essential nodejs npm
+# install js kernel
 RUN npm install --unsafe-perm -g ijavascript && \
     ijsinstall
 

@@ -1,0 +1,15 @@
+# not freezing versions, because we consider it a 'rolling release'
+# versions can be frozen in user's own requirements
+Pillow
+# Web stuff
+requests
+Flask
+beautifulsoup4
+# SQL stuff
+SQLAlchemy
+psycopg2-binary
+mysql-python
+# pymars is cool
+pymars
+# AWS
+boto3
