@@ -16,7 +16,7 @@ RUN npm install --unsafe-perm -g ijavascript && \
     ijsinstall
 
 # Forth
-RUN apt-get install gforth && \
+RUN apt-get install -y gforth && \
     cd /tmp && \
     git clone https://github.com/jdfreder/iforth && \
     cd iforth && \

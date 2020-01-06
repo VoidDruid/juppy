@@ -2,4 +2,4 @@
 
 # python preparations
 pip freeze > /base-pip-config.txt
-python /prepare.py
+python /juppy/prepare.py

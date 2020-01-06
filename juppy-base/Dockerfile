@@ -11,9 +11,9 @@ RUN apt-get update && \
     conda clean -i -l -t -y && \
     rm -rf /usr/local/src/*
 
-COPY jupyter_notebook_config.py ~/.jupyter/
-
 RUN mkdir /juppy
+
+COPY jupyter_notebook_config.py /juppy/
 
 COPY requirements.txt /juppy/
 # install important stuff

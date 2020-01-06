@@ -15,4 +15,5 @@ echo "Start installing requirements"
 $pip_install
 
 echo "Starting jupyter server"
+# TODO: user config at /juppy/jupyter_notebook_config.py
 /opt/conda/bin/jupyter notebook --allow-root --notebook-dir=/opt/notebooks --ip=0.0.0.0 --port=8888 --no-browser

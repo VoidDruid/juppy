@@ -13,8 +13,8 @@ beautifulsoup4
 
 # SQL
 SQLAlchemy
+GeoAlchemy2
 psycopg2-binary
-mysql-python
 
 # Random cool stuff
 pymars
