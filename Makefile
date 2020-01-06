@@ -7,6 +7,6 @@ build-base:
 	cd juppy-base && docker build -t $(BASE_TAG) .
 
 build-min:
-	docker build -t $(IMAGE_TAG) -f juppy/Dockerfile .
+	docker build -t $(IMAGE_TAG) -f juppy/Dockerfile --squash .
 
 build: build-base build-min
