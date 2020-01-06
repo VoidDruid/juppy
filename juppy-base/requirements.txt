@@ -1,15 +1,23 @@
+# Everything not scipy related goes here
+
 # not freezing versions, because we consider it a 'rolling release'
 # versions can be frozen in user's own requirements
+
+# Main
 Pillow
-# Web stuff
+
+# Web
 requests
 Flask
 beautifulsoup4
-# SQL stuff
+
+# SQL
 SQLAlchemy
 psycopg2-binary
 mysql-python
-# pymars is cool
+
+# Random cool stuff
 pymars
+
 # AWS
 boto3

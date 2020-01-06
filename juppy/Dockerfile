@@ -1,6 +1,7 @@
 FROM juppy-base
 
 # Install more kernels
+RUN apt-get update
 
 # Bash
 RUN pip install bash_kernel && \
@@ -14,6 +15,20 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && \
 RUN npm install --unsafe-perm -g ijavascript && \
     ijsinstall
 
+# Forth
+RUN apt-get install gforth && \
+    cd /tmp && \
+    git clone https://github.com/jdfreder/iforth && \
+    cd iforth && \
+    pip install . && \
+    cd / && \
+    rm -rf /tmp/iforth
+
 # Erlang
 # RUN git clone https://github.com/robbielynch/ierlang.git && \
 #     cd ierlang && make demo3
+
+# Clear
+RUN apt-get clean autoclean && \
+    apt-get autoremove --yes && \
+    rm -rf /var/lib/apt/lists/*
