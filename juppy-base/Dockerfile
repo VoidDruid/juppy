@@ -13,6 +13,7 @@ RUN apt-get update && \
 
 RUN mkdir /juppy
 
+ENV JUPYTER_CONFIG_DIR /juppy/
 COPY jupyter_notebook_config.py /juppy/
 
 COPY requirements.txt /juppy/
