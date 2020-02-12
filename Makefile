@@ -6,6 +6,7 @@ IMAGE_TAG=juppy
 build-base:
 	cd juppy-base && docker build -t $(BASE_TAG) .
 
+# Expects image juppy-base to exist
 build-min:
 	docker build -t $(IMAGE_TAG) -f juppy/Dockerfile .
 
