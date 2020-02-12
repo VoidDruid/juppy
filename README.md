@@ -4,11 +4,14 @@
 > **docker pull voidwalker/juppy**
 
 Удобный alias для .bashrc, для запуска контейнера который собирается в этом репозитории:
-note: замените в этой команде `~/Notebooks` на путь к директории где вы хотели бы хранить ноутбуки, и `8888` на порт, где бы вы хотели повесить jupyter
+
+note: замените в этой команде `~/Notebooks` на путь к директории где вы хотели бы хранить notebooks, и `8888` на порт, где бы вы хотели повесить jupyter
 
 ```bash
 alias juppy='docker stop juppy; docker rm juppy; docker run --name=juppy -i -t -p 8888:8888 -v ~/Notebooks:/opt/notebooks juppy /bin/bash -c "/opt/conda/bin/jupyter notebook --allow-root --notebook-dir=/opt/notebooks --ip=0.0.0.0 --port=8888 --no-browser"'
 ```
+
+Если в папке, которую вы указали для работы, есть requirements.txt, то они установятся автоматически.
 
 **TODO**:
 - Скрипт для запуска контейнера, с аргументами:
