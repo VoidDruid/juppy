@@ -28,6 +28,7 @@ RUN apt-get install -y gforth && \
 # RUN git clone https://github.com/robbielynch/ierlang.git && \
 #     cd ierlang && make demo3
 
+# NOTE: at this point, it won't reduce image size, but still
 # Clear
 RUN apt-get clean autoclean && \
     apt-get autoremove --yes && \
