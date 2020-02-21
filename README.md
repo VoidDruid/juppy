@@ -20,3 +20,4 @@ alias juppy='docker stop juppy; docker rm juppy; docker run --name=juppy -i -t -
   - директория для /opt/notebooks
 - Возможность монтировать локальный jupyter_notebook_config.py в контейнер
 - Возможность устанавливать дополнительные системные пакеты (аналог requirements.txt, но для apt-get)
+- Уменьшить размер образа (сквошить?)
