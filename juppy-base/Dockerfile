@@ -8,7 +8,7 @@ RUN apt-get update && \
     conda install -y -c anaconda tensorflow-gpu seaborn && \
     # clean
     apt-get autoremove -y && apt-get clean && \
-    conda clean -i -l -t -y && \
+    conda clean -i -t -y && \
     rm -rf /usr/local/src/*
 
 RUN mkdir /juppy
