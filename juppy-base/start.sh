@@ -4,7 +4,7 @@ function pip_install {
     requirements_file=${PIP_REQS:-"/opt/notebooks/requirements.txt"}
     echo "Trying to install requirements from '$requirements_file'"
     if [ -f "$requirements_file"]; then
-        echo "Found requirements in '$requirements_file', installing"
+        echo "Found '$requirements_file', installing"
         pip install -r $requirements_file
     else
         echo "File '$requirements_file' doesn't exist"

@@ -1,0 +1,2 @@
+/opt/conda:conda
+/juppy/jupyter_notebook_config.py:jupyter_notebook_config.py

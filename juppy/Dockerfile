@@ -4,8 +4,7 @@ FROM juppy-base
 RUN apt-get update
 
 # Bash
-RUN pip install bash_kernel && \
-    python -m bash_kernel.install
+RUN pip install bash_kernel && python -m bash_kernel.install
 
 # Javascript
 # install nodejs/npm

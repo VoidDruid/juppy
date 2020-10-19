@@ -2,7 +2,7 @@ FROM continuumio/miniconda3
 
 RUN apt-get update && \
     # install system packages
-    apt-get install -y cmake build-essential gcc g++ git wget software-properties-common && \
+    apt-get install -y cmake build-essential g++ gcc git wget software-properties-common && \
     conda install -y numpy matplotlib seaborn scipy scikit-learn pandas pytorch jupyter nltk && \
     conda install -y -c conda-forge tensorflow keras opencv && \
     conda install -y -c anaconda tensorflow-gpu seaborn && \
@@ -17,7 +17,6 @@ ENV JUPYTER_CONFIG_DIR /juppy/
 COPY jupyter_notebook_config.py /juppy/
 
 COPY requirements.txt /juppy/
-# install important stuff
 RUN pip install -r /juppy/requirements.txt
 
 # Prepare all
